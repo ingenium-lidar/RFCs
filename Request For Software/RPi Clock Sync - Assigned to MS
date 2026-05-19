@@ -1,0 +1,83 @@
+# Request for Software
+
+## What
+
+- A program to sync an RPi's system clock when a user SSHes into it
+
+    - Automation is preferred but not required
+
+    - Don't automate if automation would slow down scan speed
+
+
+## When
+
+- Must be finished before 2026-08-01
+
+
+
+## How
+
+- Should probably be written in Bash
+
+- Must be CLI only (no graphical interface!)
+
+- Must be executable (the tool you want is `chmod +x`)
+
+
+
+## Compatibility
+
+This must interface with:
+
+- Humans (see "Interface", below)
+
+- An automated startup script, cron job, .profile command, or similar
+
+This code must run on:
+
+- Ubuntu 24.04 Server
+
+It would be nice if this code also ran on:
+
+- Ubuntu 20 (whatever version the old RPis have got on them)
+
+
+
+## Interface
+
+Here is how this package will be used:
+
+`cd *wherever*`
+
+`./sync-clock.sh`
+
+
+
+ ## Detailed Specification
+
+The program must run on an RPi
+
+ When run, the program must check if an external computer is connected to it by SSH
+
+    If it is not, the program should wait until the external computer is connected, using as little compute power as possible
+
+    If it is...
+
+When the RPi is connected, via SSH, to a computer or Android mobile phone (specs available upon request), the script must update the RPi's system clock to match the system clock of the other computer
+
+    Ideally, the other computer should not need to have any script running on it to make this work
+
+    If another script proves necessary, it must be able to run on Ubuntu 20, Ubuntu 24, and Termux on Android 13, 
+    and separate interfaces must be developed, documented, and maintained for each
+
+This program must be documented, both in comments and in the Summer Project Log, and, if applicable, in the textbook, in such detail that a newcomer with only minimal 
+system knowledge would be able to understand your code and write an extension to it adding some undefined additional functionality.
+
+After all functionality has been achieved, the relevant installer scripts must be updated to install this package, and these changes must be documented also.
+
+## Signed
+
+This Request for Software was put out by A. Baker, software architect. Email him with any questions.
+
+Drafted 2026-05-19 3:49 PM Antalya Time
+Revised ---
