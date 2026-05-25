@@ -8,19 +8,7 @@
 
     - Goal is to design an algorithm that doesn't produce Blender's weird spikes using edge-detection and similar
 
-    - Will require deep understanding of mesh and solid format (they're all .stl s) at an encoding level
 
-    - Python
-
-    -  Extra Requirements: It's a direct data-analysis algorithm. Therefore: 
-    
-        - No AI/LLMs on this one.
-
-        - everything must be human-written and human-understood
-
-        - Everything must be documented for a scientist to read it
-
-        - Ideally, there should be a mathematical description of the algorithm implemented in an ALGORITHM.md file
 
 
 ## When
@@ -42,6 +30,18 @@
 - Must be CLI initially (no graphical interface until everything is working!)
 
 - Must be executable (the tool you want is `chmod +x`)
+
+- Will require deep understanding of mesh and solid format (they're all .stl s) at an encoding level
+
+-  Extra Requirements: It's a direct data-analysis algorithm. Therefore: 
+
+    - No AI/LLMs on this one.
+
+    - everything must be human-written and human-understood
+
+    - Everything must be documented for a scientist to read it
+
+    - Ideally, there should be a mathematical description of the algorithm implemented in an ALGORITHM.md file
 
 
 
@@ -186,4 +186,5 @@ where your initial vector just happens to be [0, 0, 1], scaled by however much. 
 This Request for Software was put out by A. Baker, software architect. Email him with any questions.
 
 Drafted 2026-05-25 5:50 PM Antalya Time
-Revised ---
+
+Revised 2026-05-25 6:12 PM Antalya Time by A. Baker
