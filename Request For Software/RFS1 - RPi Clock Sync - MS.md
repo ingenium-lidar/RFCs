@@ -1,4 +1,4 @@
-# Request for Software
+# Request for Software: RPi Clock Sync
 
 ## What
 
@@ -75,6 +75,10 @@ system knowledge would be able to understand your code and write an extension to
 
 After all functionality has been achieved, the relevant installer scripts must be updated to install this package, and these changes must be documented also.
 
+
+## Peer Review
+
+One person should verify that the software produced meets all specifications and is fully documented.
 
 
 ## Signed

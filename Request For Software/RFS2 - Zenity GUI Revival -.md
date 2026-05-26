@@ -1,4 +1,4 @@
-# Request for Software
+# Request for Software: Zenity GUI
 
 ## What
 
@@ -66,6 +66,11 @@ Once the files have been transferred to [User_Device] (the device this script is
 At this point, there should be a GUI popup asking if the user wants to SLAM. If the user says "No", you can just close the program (the Bash `exit` keyword is helpful). If the user says "Yes", the program should utilize our consistent and well-defined directory structure to locate and SLAM all relevant .mcap files which were just copied. It should NOT SLAM any files which it hasn't just copied! Use the receipt of transfer for this. :) NB! This API is not well-defined yet. If you get to the point where you need
 to implement this and still nobody has defined it, you can write a specification yourself. Just remember to document your work!
 
+
+## Peer Review
+
+One person should peer review any GUI and make sure that using it is intuitive and adequately explained within the GUI itself.
+During the review process, the author of the code should not speak--they should just hand the computer to the reviewer.
 
 
 ## Signed

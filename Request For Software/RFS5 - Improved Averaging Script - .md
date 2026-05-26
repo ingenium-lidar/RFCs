@@ -195,6 +195,9 @@ Any final averaging script will probably be a blend between these methods, but t
 pursuing at the moment. (If I haven't mentioned your favorite method, send me an email and I'll probably add it in)
 
 
+## Peer Review
+
+This algorithm should be peer reviewed by two team members with experience in data science and shown and explained to Dr. Master before it goes into production use. 
 
 ## Signed
 

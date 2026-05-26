@@ -1,4 +1,4 @@
-# Request for Software
+# Request for Software: Title Goes Here
 
 ## What
 
@@ -73,6 +73,10 @@ It should output errors, if any, to a file in the same directory called
  On Termux, when the user opens the app, they should SSH into the RPi immediately.
 
 On Ubuntu, this behaviour should not happen. (The dev may need to write a cron job or similar for Termux specifically. If the dev does so, there should be included a script which can be run once to set up the cron job)
+
+## Peer Review
+
+One person should peer review the finished software to verify that it complies with this RFS
 
 ## Signed
 
