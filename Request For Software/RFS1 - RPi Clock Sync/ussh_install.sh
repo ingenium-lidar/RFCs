@@ -1,13 +1,4 @@
 #!/bin/bash
-echo "Please read and be familiar with this script and its functionality before you install it."
-read -r -p "Do you want to proceed? Y/N " script_run
-if [[ "$script_run" =~ ^[Yy] ]]; then
-    echo "Ok, proceeding with install..."
-else
-    echo "Aborting..."
-    exit 0
-fi
-
 while true; do
     read -r -p "Do you want to add to \$PATH (type \"1\") or to a custom directory (type \"2\")? " script_location
     if [[ "$script_location" == "1" ]]; then
