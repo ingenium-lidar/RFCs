@@ -1,6 +1,82 @@
-# How to install: Automatic RPi Clock Sync
+# ussh_install.sh README.md
 
-## Ubuntu Linux installation
+A bash script that syncs a Raspberry Pi's clock from a connected host computer over SSH, for use when the Pi has no internet access and no real-time clock module.
+
+## Why
+
+A Raspberry Pi without a real-time clock (RTC) module loses track of time when powered off, since it has no battery-backed clock. If the Pi is also offline (no NTP server reachable), its clock drifts and file timestamps become unreliable. This script syncs the Pi's clock from the host computer at the moment of connection.
+
+## Security notice
+
+This repo contains shell scripts that run on your machine and on your Raspberry Pi. Before running anything from this repo, please:
+
+1. Read `ussh_install.sh` end-to-end to understand what the installer does.
+2. Read `ussh` (the script the installer creates) to understand what runs when you connect to the Pi.
+3. Avoid `curl ... | bash`-style installs without first downloading and reviewing the script.
+
+The installer writes a file to your chosen directory, optionally generates an SSH keypair, and prints instructions for connecting to the Pi. It does not modify system files or install anything that requires root on your host machine.
+
+## Requirements
+
+**Host machine:**
+- Ubuntu Linux (20.04 and 24.04)
+- `ssh`, `ssh-keygen`, `ssh-copy-id` available (standard on Ubuntu)
+- `bash` (standard on Ubuntu)
+
+**Raspberry Pi:**
+- Username `ubuntu` (hardcoded in the script — change manually if yours differs)
+- IP `10.42.0.1` (the default NetworkManager hotspot gateway — hardcoded; change manually if yours differs)
+- SSH server enabled on the Pi
+- User account with `sudo` access (needed to set the system clock)
+
+**Network:**
+- A way for the host to reach the Pi at `10.42.0.1` — typically the Pi runs its own WiFi hotspot and the host joins it
+- Note: while connected to the Pi's hotspot, the host may not have internet access
+
+## Install (automatic)
+
+The installer handles the steps in the manual install section — creating the directory, writing the `ussh` script, optionally generating an SSH key.
+
+**Recommended — download, review, run:**
+
+```bash
+curl -O https://raw.githubusercontent.com/ingenium-lidar/RFCs/refs/heads/main/Request%20For%20Software/RFS1%20-%20RPi%20Clock%20Sync/ussh_install.sh
+less ussh_install.sh
+bash ussh_install.sh
+```
+
+For a quicker setup (after previously reviewing the script:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ingenium-lidar/RFCs/refs/heads/main/Request%20For%20Software/RFS1%20-%20RPi%20Clock%20Sync/ussh_install.sh
+```
+
+The installer will prompt you for:
+- Install location (`~/bin` or a custom directory)
+- Whether to set up an SSH key (and if so, `ssh-keygen` will prompt for the key location and passphrase)
+
+It's safe to re-run — existing files are skipped, not overwritten.
+
+To perform manually, see [Ubuntu Linux Manual Installation](##ubuntu-linux-manual-installation)
+
+## Usage
+
+Once installed, connect to the Pi's hotspot, then run:
+
+```bash
+ussh
+```
+
+You'll be prompted for your key passphrase (if set up) or the Pi's password (if not). On success, the Pi's clock is synced to your host machine and you're dropped into an interactive Pi shell.
+
+## Limitations
+
+- Hardcoded `ubuntu@10.42.0.1` — won't work for Pis configured differently without manual edits.
+- The `sudo date -s` call on the Pi may prompt for a password over SSH and hang in non-interactive scenarios. If you hit this, you can configure passwordless `sudo` for `/bin/date` only on the Pi via `visudo` — but this is a Pi-side change with security implications worth understanding first.
+- The Pi must be booted and reachable on the hotspot before `ussh` will work.
+
+## Ubuntu Linux Manual Installation
+To install manually:
 
   1. First, starting in the right Ubuntu distro (this process will work for both Ubuntu 20.04 and 24.04), you will have to decide where you want this file to be created. I did it in my ~/bin which adds it to my $PATH, which is mostly useful in that you don't need to be in a particular file to run it.
   - If you are using ~/bin to add to PATH, first check if you have it set up with: 
