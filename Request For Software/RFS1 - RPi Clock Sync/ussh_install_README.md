@@ -132,7 +132,7 @@ ssh-keygen -t ed25519 #"ssh-keygen" generates a new key, "-t" specifies the type
     
 <img width="1231" height="286" alt="image" src="https://github.com/user-attachments/assets/3097b199-0f93-410e-b48b-139eb6b1e4f9" />
     
-  - You will be automatically prompted a couple of times. First to confirm location, confirm location at "~/.ssh/id_ed25519", which should be listed and you just hit enter. Second, to enter a passphrase (save in a safe place) which can probably be the usual one :).
+  - You will be automatically prompted a couple of times. First to confirm location, confirm location at "~/.ssh/id_ed25519", which should be listed and you just hit enter. Second, to enter a passphrase 
   2. You can check that it worked by writing this:
 ```bash
 ls -la ~/.ssh/ # ls (list) -la (lists all files (-a) in a long format (-l))
