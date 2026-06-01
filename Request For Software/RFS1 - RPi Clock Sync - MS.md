@@ -75,6 +75,14 @@ system knowledge would be able to understand your code and write an extension to
 
 After all functionality has been achieved, the relevant installer scripts must be updated to install this package, and these changes must be documented also.
 
+## RTFMs
+
+The following concepts are relevant to this work:
+
+SSH, Ubuntu Server, Termux, Networking (ip address), Unix Epoch, bash, bash scripting, shebang, cron, bashrc, alias, hotspot
+
+The dev should review any concepts with which they are not familiar. 
+
 
 ## Peer Review
 

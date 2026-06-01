@@ -74,6 +74,13 @@ It should output errors, if any, to a file in the same directory called
 
 On Ubuntu, this behaviour should not happen. (The dev may need to write a cron job or similar for Termux specifically. If the dev does so, there should be included a script which can be run once to set up the cron job)
 
+## RTFMs
+
+The following concepts are relevant to this work:
+
+SSH, Ubuntu Server, Termux, Networking (ip address), bash, bash scripting, shebang, cron, bashrc, alias, hotspot
+
+The dev should review any concepts with which they are not familiar. 
 
 
 ## Signed

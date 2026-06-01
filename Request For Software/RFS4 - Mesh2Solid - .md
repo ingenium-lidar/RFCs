@@ -181,6 +181,15 @@ this reason, a purely vertical bias vector is unfortunately not perfect. One fut
 Bear this optimization in mind when developing your z-axis bias--I strongly recommend developing a system based on bias *vectors*--NOT assumed axes--from the start,
 where your initial vector just happens to be [0, 0, 1], scaled by however much. This will make applying this optimization later a lot easier. 
 
+## RTFMs
+
+The following concepts are relevant to this work:
+
+Python, Blender, .stl files as solid and mesh, vectors, differential equations, vector calculus, mathematical optimization, cartesian coordinate systems, averaging, dig site geometry, YAML, JSON, CLI, GUI, Ubuntu 24, Ubuntu 20, CloudCompare, Markdown, cross-language scripting, data analysis standards
+
+The dev should review any concepts with which they are not familiar. 
+
+
 ## Peer Review
 
 This algorithm should be peer reviewed by two team members with experience in data science and shown and explained to Dr. Master before it goes into production use. 

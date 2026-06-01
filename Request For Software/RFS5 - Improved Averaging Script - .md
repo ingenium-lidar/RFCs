@@ -292,6 +292,15 @@ pursuing at the moment. (If I haven't mentioned your favorite method, send me an
 
 This algorithm should be peer reviewed by two team members with experience in data science and shown and explained to Dr. Master before it goes into production use. 
 
+## RTFMs
+
+The following concepts are relevant to this work:
+
+Python, .ply, vectors, numpy, pandas, mathematical optimization, cartesian coordinate systems, averaging, dig site geometry, JSON, CLI, Ubuntu 24, Ubuntu 20, CloudCompare, data analysis standards
+
+The dev should review any concepts with which they are not familiar. 
+
+
 ## Signed
 
 This Request for Software was put out by A. Baker, software architect. Email him with any questions.

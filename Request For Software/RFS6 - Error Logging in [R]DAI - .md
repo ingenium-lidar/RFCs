@@ -83,6 +83,14 @@ There should be an executable script (Bash, Python, or whatever--up to you) that
 5. Code re-use. If possible, write one agent script capable of checking both DAI and RDAI. Remember, you can customize the function calls from within those scripts, so the more code you can reuse, the better. This makes it much easier for others to read your code. 
 
 
+## RTFMs
+
+The following concepts are relevant to this work:
+
+Bash, agent scripts, system architecture, filesystem conventions, log files, JSON, functional programming, DAI, RDAI, YAML, Unix exit codes, numbers as booleans in C-like languages and Bash, installer scripts, apt & snapd, ROS, git and git clone, curl & wget, traversing file system with Bash, Ubuntu 24
+
+The dev should review any concepts with which they are not familiar. 
+
 
 ## Peer Review
 

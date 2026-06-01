@@ -53,7 +53,7 @@ it needs. and also should pop up status indicators if a part of the script might
 
  The program may assume that the two devices are on the same wifi network (the RPi hotspot), but if they are not, it should remind the user in plain English to connect to the RPi's hotspot
 
- Once in the RPi, the program should scp all files and directories in [RPi]~/Documents/Data to [User_Device]~/Documents/Data. Then, it shhould verify that they were all copied correctly.
+ Once in the RPi, the program should scp all files and directories in [RPi]~/Documents/Data to [User_Device]~/Documents/Data. Then, it should verify that they were all copied correctly.
  (I've heard of something called a hash, or checksum, which might be helpful in verifying this. Look into it) 
  The program should store the names of all of these files and directories copied in file somewhere (file should be readable by both humans and machines. Maybe a JSON?). 
  Maybe a "receipts" directory somewhere? Be creative, and then document what you did. The receipt should be labeled with the date and time of the copy action.
@@ -65,6 +65,14 @@ Once the files have been transferred to [User_Device] (the device this script is
 
 At this point, there should be a GUI popup asking if the user wants to SLAM. If the user says "No", you can just close the program (the Bash `exit` keyword is helpful). If the user says "Yes", the program should utilize our consistent and well-defined directory structure to locate and SLAM all relevant .mcap files which were just copied. It should NOT SLAM any files which it hasn't just copied! Use the receipt of transfer for this. :) NB! This API is not well-defined yet. If you get to the point where you need
 to implement this and still nobody has defined it, you can write a specification yourself. Just remember to document your work!
+
+## RTFMs
+
+The following concepts are relevant to this work:
+
+Ubuntu 24, bash, bash scripting, shebang, zenity, .desktop files, process_bag.sh, default file systems, ssh, ip addresses [networking], hotdpot, RPi, hash/checksum, JSON, file manipulation with bash, GUI
+
+The dev should review any concepts with which they are not familiar. 
 
 
 ## Peer Review
