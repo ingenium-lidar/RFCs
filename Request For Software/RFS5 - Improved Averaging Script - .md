@@ -253,24 +253,25 @@ scanned in one frame to be placed at a slight angle to a second scan-frame of th
 
 ______________________________________________________
        
-                          .               
-                      .
-                  .                   z
-              .                       |
-    ..........................        |_____ x
-        .
-    .
+            
+           /          
+          /                           z
+         /                            |
+    ----+---------                    |_____ x
+       /   
+      /
 ______________________________________________________
 
 The theory, then, is that the true ground is the ground that is around the intersection of these two frames--that is, the area with the greatest
-density of points. Trimming out points far from the intersection is likely, under this theory, to improve the surface accuracy.
+density of points (here, the vicinity of the `+`). Trimming out points far from the intersection is likely, under this theory, to improve the surface accuracy.
 
 
 
 ### Averaging by Distortion Towards the Mode
 
-This idea also relies on dividing the data into very thin columns. Instead of the mean, though, it uses the mode–the z coordinate which appears most often in the column (the idea being that this is most likely to be the surface). It may be necessary to count anything within n of a given number to be equal to that number for this purpose. Then, points are translated differing distances based on their distance from the mode. So, if a given point is 100 meters from the mode, its Z coordinate might be multiplied by 0.01 (making its Z much smaller), while a point 1 meter away from the mode might only have its Z coordinate multiplied by 0.5 (not affecting its Z coordinate much). **NOTE!** This will produce very strange
-and twisted results if the true ground level is not near Z=0! You may need to compensate for this by temporarily adjusting your coordinate axis to be closer to the mode.
+This idea also relies on dividing the data into very thin columns. Instead of the mean, though, it uses the mode–the z coordinate which appears most often in the column (the idea being that this is most likely to be the surface). It may be necessary to count anything within n of a given number to be equal to that number for this purpose. Then, points are translated differing distances based on their distance from the mode. So, if a given point is 100 meters from the mode, its Z coordinate might be multiplied by 0.01 (making its Z much smaller), while a point 1 meter away from the mode might only have its Z coordinate multiplied by 0.5 (not affecting its Z coordinate much). 
+
+**NOTE!** This will produce very strange and twisted results if the true ground level is not near Z=0! You may need to compensate for this by temporarily adjusting your coordinate axis to be closer to the mode.
 
 ### Slicing by Cuboid Density
 
@@ -281,12 +282,17 @@ This one also relies on the idea that more points will be closer to the surface 
 This one divides the whole cloud into little cubes. Then, it does the same thing as Johannes Averaging, except that instead of averaging
 the Z of a whole column, it just averages the Z of the cube. 
 
+**NOTE!** One algorithm of this type has been rejected, and is located at `averaging_scripts/Rejected/averaging_function_Baker_A.py`
+
 ### Fill In Your Own Averaging Algorithm Idea: _______________
 
 
 Any final averaging script will probably be a blend between these methods, but these are all the ideas I've heard so far that I think I'm worth
 pursuing at the moment. (If I haven't mentioned your favorite method, send me an email and I'll probably add it in)
 
+## Previous Research
+
+See the averaging_scripts repo in the ingenium-lidar GitHub organization to review previous research on this subject before beginning your own research. 
 
 ## Peer Review
 
@@ -306,4 +312,7 @@ The dev should review any concepts with which they are not familiar.
 This Request for Software was put out by A. Baker, software architect. Email him with any questions.
 
 Drafted 2026-05-25 7:25 PM Antalya Time
+
 Revised 2026-05-26 1:50 PM Antalya Time by A. Baker
+
+Revised 2026-06-03 1:14 PM Antalya Time by A. Baker
