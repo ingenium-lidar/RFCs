@@ -2,13 +2,13 @@
 
 ## What
 
-- After RDAI runs, it reboots. There is a further script in ingenium_cartographer/cartographer_config called RPi_Network_Config.sh that needs to be run immediately after RDAI reboots. There should be a way to do this automatically, and build that functionality into RDAI.
+- After `RPi_Default_Apps_Installer.sh` (RDAI) runs, it reboots. There is a further script in ingenium_cartographer/cartographer_config called RPi_Network_Config.sh that needs to be run immediately after RDAI reboots. There should be a way to do this automatically, and build that functionality into RDAI.
 
 
 
 ## When
 
-- Should be finished before 2027-04-1
+- Should be finished before 2026-08-01
 
 
 
@@ -36,7 +36,7 @@ This is an absolute. This script may not interact with humans, or with any human
 Here is how this package will be used:
 
 ```
-cd ~/Documents/GitHub/agent_scripts
+cd ~/Documents/GitHub/ingenium_cartographer/agent_scripts
 ./RPi_post-reboot_installer.sh
 reboot
 ```
@@ -68,7 +68,7 @@ reboot
 
  Blocks:
 
- - You can't do this with ~/.bashrc because that doesn't work until someone SSHs in
+ - You can't do this with ~/.bashrc because that doesn't work until someone SSHs in (.profile might work, though)
 
  - It can't reboot infinitely
 
@@ -95,3 +95,4 @@ One person should peer review the finished software to verify that it complies w
 This Request for Software was put out by A. Baker, assistant software architect. Email him with any questions.
 
 Drafted 2026-06-02 16:25 Antalya Time
+Revised by A Baker 2026-06-04 16:08 Antalya Time
