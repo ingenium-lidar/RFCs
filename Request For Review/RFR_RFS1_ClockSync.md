@@ -1,4 +1,4 @@
-# Request for Review
+# Request for Review: RPi Clock Sync
 
 ## What
 - Bash script that performs temporary, manual ssh into the RPi and updates the time to that of the computer.
