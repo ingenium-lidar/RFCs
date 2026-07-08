@@ -3,8 +3,7 @@ Specification documents for code that needs developing, requests for peer review
 
 ## How to Use This Repository
 
-If you are not a member of the Ingenium LiDAR team, this repository will likely not be useful to you. You may read it if you like, but
-it will probably not be worth your time. 
+If you are not a member of the Ingenium LiDAR team, this repository will likely not be useful to you. You may read it if you like, but it will probably not be worth your time. 
 
 ### Reading This Repository
 
@@ -28,6 +27,9 @@ Ideas that sound smart at the time but ultimately prove less-than-ideal can be m
 
 Read through the Ideas folder! If there's anything in there that you think is worth putting out an RFS for, write the RFS! (Of course, adjust the priority field on the RFS accordingly, to prevent overprioritization of fun but unecessary projects).
 
+#### If you're an architect with not enough time:
+
+Write a Request for Investigation to outsource research tasks to other teammembers. Other teammembers should not begin researching on the clock until an architect specifically and personally assigns them to an RFI. 
 
 ### Writing an RFS
 
@@ -45,3 +47,8 @@ the place for drafting or thinking out loud. That's what Ideas are for. It is an
 ### Writing an RFR
 
 Write a Request For Review when you have completed a task specified in an RFS. Once you have a draft of your software that you consider minimally functional, you should write an RFR about it to ask a teammember to check over your code. A second pair of eyes can be very helpful!
+
+
+### Writing an RFI
+
+Write a Request For Investigation when you're the architect and you want a tool that does a very specific thing, but don't know which tool or tools exist to do that thing. Write very clearly and specifically define the information you want in as much detail as you can.
