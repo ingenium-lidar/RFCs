@@ -20,7 +20,8 @@
 
 ## Reviews
 
-I have reviewed this code. It complies with all conditions set out in the initial Request For Software, and is well documented. It complies with all test cases when run on a standard-OS LiDAR computer with no packages installed which are not included in Default_Apps_Installer.sh. I certify that I believe it to be compliant with the AI Policy. 
+I have reviewed this code. It complies with all conditions set out in the initial Request For Software, and is well documented.
+I certify that I believe it to be compliant with the AI Policy. 
 
 I certify that I have completed the full peer-review checklist.
 
