@@ -2,7 +2,7 @@
 
 ## What
 
-- A program to automaticallly move the contents of RPi:~/Documents/Data into G16:~/Documents/Data, verify that this has been done correctly, and (optionally) SLAM all as yet un-SLAMmed .db3/.mcap files in the moved batch
+- A program to automaticallly move the contents of RPi:~/Documents/Data into G16:\~/Documents/Data, verify that this has been done correctly, and (optionally) SLAM all as yet un-SLAMmed .db3/.mcap files in the moved batch
 
 
 
@@ -89,11 +89,11 @@ In the event  of an unrecognized param, the program should throw a warning to te
 
  The program should record all these names in "RPi-unique-data-files-YYYY-MM-DD HH:MM.txt" (or .json or whatever, as before) and save that file. Then, it should compress all these folders into .zip archives (do NOT delete the original directories yet! So far we just have these zipped copies lying around). Then, it should create a _hash_ or "checksum" for each zip file, which serves as a unique identifier of that file and a guarantor that it has not been altered. You may use any hash algorithm you please, cryptographically secure or not. We do not especially care in this case. It should append the hash of each file to that "RPi-unique-data-files" file, in such a manner that a human and a machine can easily distinguish which hash algorithm goes with which directory name. To be clear, we're listing the name of the unique directory alongside the hash of the zip file of that directory. 
 
- Then, the program should scp all of those zip files, along with the "RPi-unique-data-files" file, into G16://~/Documents/Data. It should then find the hash of each of these zip folders _again_--if the hash has changed, it means that the zip file has become corrupted in transit from the RPi to the G16.
+ Then, the program should scp all of those zip files, along with the "RPi-unique-data-files" file, into G16://\~/Documents/Data. It should then find the hash of each of these zip folders _again_--if the hash has changed, it means that the zip file has become corrupted in transit from the RPi to the G16.
 
  - If the hash has changed, the program should go back, rezip that file on the RPi, rehash it, re-scp it, and check it again. The program should keep on trying this until it works.
 
- - If the hash that was calculated and recorded on the RPi (as recorded in that "RPi-unique-data-files" file) is the same as the hash that is calculated on the G16 (make sure you use the same algorithm both times!) then the program should unzip that zip file into G16://~/Documents/Data. Then, it should delete the zip archives on both the RPi and the G16, and it may rm -rfd the original data folder on the RPi. Finally, the names of each directory succesfully transferred in this way should be echoed to an invisible file in G16://~/Documents/Data/ called ".transferred-YYYY-MM-DD". Put the name of each transferred directory on its own line in here. This part of the specification is important because it may interact with the "Data Backups to Box" Idea if/when it is written into an RFS. 
+ - If the hash that was calculated and recorded on the RPi (as recorded in that "RPi-unique-data-files" file) is the same as the hash that is calculated on the G16 (make sure you use the same algorithm both times!) then the program should unzip that zip file into G16://~/Documents/Data. Then, it should delete the zip archives on both the RPi and the G16, and it may rm -rfd the original data folder on the RPi. Finally, the names of each directory succesfully transferred in this way should be echoed to an invisible file in G16://\~/Documents/Data/ called ".transferred-YYYY-MM-DD". Put the name of each transferred directory on its own line in here. This part of the specification is important because it may interact with the "Data Backups to Box" Idea if/when it is written into an RFS. 
 
  - Nextm if the `--SLAM` parameter was passed, the program should now examine the data folders it copied (which should be in alignment with the filestructure produced by `record_to_bag.sh`). If there are any .mcap/.db3 files inside with the label "RAW" which do not have a matching file with the label "RAW-SLAM", the program should run `process_bag.sh` on them with the appropriate parameters as needed. Consult the "RPi-unique-data-files" file to determine which directories should be examined and potentially SLAMMed in this instance. Do not examine or SLAM any directories not copied in the current operation.
 
