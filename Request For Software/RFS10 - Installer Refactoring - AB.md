@@ -52,6 +52,7 @@ Here is how this package will be used:
 - `--version` — version string, exit 0
 - `--omit-gui` — applicable only for DAI. Do not install GUI applications, exit 0
 - `--package=` — installer script to run. `--package=dev-jazzy`, `--package=rpi`, etc. 
+- `-b`, `--branch=` — specify which branch of ingenium_cartographer to use. 
 
 
 ## Exit Codes
