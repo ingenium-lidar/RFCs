@@ -25,6 +25,13 @@ Along those same lines, while we're moving code over, let's put topic renamings 
 
 - Rename the IMU topic to a simple /imu
 
+## RTFMs
+
+Info on the drivers: https://docs.google.com/document/d/15xIyGQc6kWtry4_2FnW8B0W0xo9MxjumuvBmkaIHdJs/edit?tab=t.0#heading=h.ah3gek9xt7gk
+
+More about our specific SLAM and the topics involved: https://docs.google.com/document/d/1HL24Ec4AUhyH0FEM-7lV_DmCMBd_8K3ZKQzwy4NYEMM/edit?tab=t.5x4zg4nogoi4#heading=h.mewmbcw4p07t
+
+`ros2 node list`, `ros2 topic list`, `ros2 topic info`, and `ros2 topic echo` are your friends here!
 
 ## Peer Review
 
@@ -35,3 +42,5 @@ Not strictly necessary on this one, as long as the code works. If you're new to 
 This Request for Software was put out by A. Baker, software architect. Email him with any questions.
 
 Drafted 2026-07-27 1:28 PM UTC+3
+
+Revised 2026-07-27 1:36 PM UTC+3 A. Baker
